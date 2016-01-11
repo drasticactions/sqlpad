@@ -83,7 +83,7 @@ module.exports =  {
             x: x,
             plugins: [
                 tauCharts.api.plugins.get('tooltip')({fields: [fields.barlabel.val, fields.barvalue.val, fields.labelFacet.val, fields.valueFacet.val]}),
-                tauCharts.api.plugins.get('legend')()
+                tauCharts.api.plugins.get('legend')(),tauCharts.api.plugins.get('exportTo')()
             ]
         });
         chart.renderTo('#chart');
@@ -172,7 +172,7 @@ module.exports =  {
             x: x,
             plugins: [
                 tauCharts.api.plugins.get('tooltip')({fields: [fields.barlabel.val, fields.barvalue.val, fields.labelFacet.val, fields.valueFacet.val]}),
-                tauCharts.api.plugins.get('legend')()
+                tauCharts.api.plugins.get('legend')(),tauCharts.api.plugins.get('exportTo')()
             ]
         });
         chart.renderTo('#chart');
@@ -255,9 +255,295 @@ module.exports =  {
         if (fields.trendline.val) {
             plugins.push(tauCharts.api.plugins.get('trendline')());
         }
+		plugins.push(tauCharts.api.plugins.get('exportTo')());
         plugins.push(tauCharts.api.plugins.get('tooltip')({fields: [fields.x.val, fields.y.val, lineForEach]}));
         plugins.push(tauCharts.api.plugins.get('legend')());
-        
+        plugins.push(tauCharts.api.plugins.get('annotations')({
+			items: [
+  {
+      "dim": "time",
+      "val": "1/26/2015",
+      "text": "Website - 5.0.0.17",
+      "color": "black"
+  },
+  {
+      "dim": "time",
+      "val": "3/13/2015",
+      "text": "Alpha - 4.20.0.38",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "3/18/2015",
+      "text": "Alpha - 4.20.1.0",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "3/18/2015",
+      "text": "Beta - 4.20.1.0",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "3/26/2015",
+      "text": "Stable - 4.20.1.0",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "4/2/2015",
+      "text": "Alpha - 5.1.0.100",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "4/8/2015",
+      "text": "Beta - 4.20.2.1",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "4/9/2015",
+      "text": "Stable - 4.20.2.1",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "4/14/2015",
+      "text": "Alpha - 5.1.0.113",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "4/15/2015",
+      "text": "Beta - 5.1.0.113",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "4/21/2015",
+      "text": "Beta - 5.1.0.115",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "4/29/2015",
+      "text": "Stable - 5.1.0.115",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "5/5/2015",
+      "text": "Alpha - 5.1.0.129",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "5/8/2015",
+      "text": "Alpha - 5.1.1.3",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "5/12/2015",
+      "text": "Alpha - 5.1.2.0",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "5/13/2015",
+      "text": "Beta - 5.1.1.0",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "5/13/2015",
+      "text": "Stable - 5.1.1.0",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "5/19/2015",
+      "text": "Beta - 5.1.2.0",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "5/27/2015",
+      "text": "Alpha - 5.1.2.1",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "5/27/2015",
+      "text": "Beta - 5.1.2.1",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "6/2/2015",
+      "text": "Stable - 5.1.2.1",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "6/3/2015",
+      "text": "Alpha - 5.1.3.1",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "6/3/2015",
+      "text": "Beta - 5.1.3.1",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "6/3/2015",
+      "text": "Stable - 5.1.3.1",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "6/10/2015",
+      "text": "Alpha - 5.1.4.8",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "6/10/2015",
+      "text": "Alpha - 5.1.4.8",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "6/23/2015",
+      "text": "Alpha - 5.1.4.16",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "6/23/2015",
+      "text": "Beta - 5.1.4.16",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "7/17/2015",
+      "text": "Alpha - 5.1.5.2",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "7/20/2015",
+      "text": "Website - 5.1.77",
+      "color": "black"
+  },
+  {
+      "dim": "time",
+      "val": "7/23/2015",
+      "text": "Stable - 5.1.5.3",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "8/25/2015",
+      "text": "Beta - 5.1.6.5",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "8/25/2015",
+      "text": "Alpha - 5.1.99.618",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "9/2/2015",
+      "text": "Alpha - 5.1.99.653",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "9/10/2015",
+      "text": "Website - 5.1.7.10",
+      "color": "black"
+  },
+  {
+      "dim": "time",
+      "val": "9/11/2015",
+      "text": "Stable - 5.1.6.7",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "9/18/2015",
+      "text": "Alpha - 6.0.0.0",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "9/24/2015",
+      "text": "Alpha - 6.0.0.2",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "10/5/2015",
+      "text": "Alpha - 6.0.0.8",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "10/8/2015",
+      "text": "Stable - 5.1.7.12",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "10/8/2015",
+      "text": "Stable - 5.1.7.12",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "10/20/2015",
+      "text": "Stable - 5.1.8.0",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "10/22/2015",
+      "text": "Beta - 5.1.9.0",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "10/28/2015",
+      "text": "Stable - 5.1.9.0",
+      "color": "green"
+  },
+  {
+      "dim": "time",
+      "val": "10/30/2015",
+      "text": "Alpha - 6.0.0.27",
+      "color": "red"
+  },
+  {
+      "dim": "time",
+      "val": "11/11/2015",
+      "text": "Beta - 6.0.0.33",
+      "color": "yellow"
+  },
+  {
+      "dim": "time",
+      "val": "11/17/2015",
+      "text": "Stable - 6.0.0.34",
+      "color": "green"
+  }
+]
+		}));
         if (lineForEach) {
             chart = new tauCharts.Chart({
                 data: data,
@@ -369,6 +655,7 @@ module.exports =  {
         if (fields.trendline.val) {
             plugins.push(tauCharts.api.plugins.get('trendline')());
         }
+		plugins.push(tauCharts.api.plugins.get('exportTo')());
         plugins.push(tauCharts.api.plugins.get('tooltip')({fields: [fields.x.val, fields.y.val, fields.size.val, fields.color.val]}));
         plugins.push(tauCharts.api.plugins.get('legend')());
         

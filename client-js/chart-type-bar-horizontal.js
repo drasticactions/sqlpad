@@ -81,7 +81,7 @@ module.exports =  {
             x: x,
             plugins: [
                 tauCharts.api.plugins.get('tooltip')({fields: [fields.barlabel.val, fields.barvalue.val, fields.labelFacet.val, fields.valueFacet.val]}),
-                tauCharts.api.plugins.get('legend')()
+                tauCharts.api.plugins.get('legend')(),tauCharts.api.plugins.get('exportTo')()
             ]
         });
         chart.renderTo('#chart');

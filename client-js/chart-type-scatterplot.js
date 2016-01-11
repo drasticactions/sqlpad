@@ -84,6 +84,7 @@ module.exports =  {
         if (fields.trendline.val) {
             plugins.push(tauCharts.api.plugins.get('trendline')());
         }
+		plugins.push(tauCharts.api.plugins.get('exportTo')());
         plugins.push(tauCharts.api.plugins.get('tooltip')({fields: [fields.x.val, fields.y.val, fields.size.val, fields.color.val]}));
         plugins.push(tauCharts.api.plugins.get('legend')());
         
